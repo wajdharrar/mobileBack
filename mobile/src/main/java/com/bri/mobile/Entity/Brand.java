@@ -19,7 +19,7 @@ public class Brand {
     private int idBrand;
     @Column(length = 10,nullable = false)
     private String nameBrand;
-    @Column(length=255,nullable = false)
+    @Column(length=2550,nullable = false)
     private String logoBrand;
     @Column(length = 1000, nullable = false)
     private String descBrand;

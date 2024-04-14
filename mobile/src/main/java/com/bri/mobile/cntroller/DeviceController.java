@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/device")
-@CrossOrigin("*")
 public class DeviceController {
     @Autowired
     DeviceFace deviceFace;

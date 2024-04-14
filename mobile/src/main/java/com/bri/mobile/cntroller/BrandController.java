@@ -2,6 +2,7 @@ package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.Entity.Brand;
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/brand")
 public class BrandController {
     @Autowired
@@ -31,6 +31,10 @@ public class BrandController {
     @PutMapping("/update/{id}")
     BrandDto updateBrand(@PathVariable int id ,@RequestBody BrandDto brand){
         return brandFace.updateBrand(brand,id);
+    }
+    @PutMapping("/updatestate/{id}")
+    BrandDto updateState(@PathVariable int id ,@RequestBody BrandDto brandState){
+        return brandFace.updateState(brandState,id);
     }
     @DeleteMapping("/delete/{id}")
     void deleteBrand(@PathVariable int id){

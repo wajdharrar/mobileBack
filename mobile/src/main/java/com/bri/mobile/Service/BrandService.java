@@ -4,6 +4,7 @@ import com.bri.mobile.DTO.Mapper.BrandMap;
 import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.Entity.Brand;
 import com.bri.mobile.Entity.User;
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.BrandFace;
 import com.bri.mobile.Repo.BrandRepo;
 import com.bri.mobile.Repo.UserRepo;
@@ -40,6 +41,16 @@ public class BrandService implements BrandFace {
             oldBrand.setNameBrand(brand.getNameBrand());
             oldBrand.setLogoBrand(brand.getLogoBrand());
             oldBrand.setDescBrand(brand.getDescBrand());
+            return BrandMap.toBrandDto(brandRepo.save(oldBrand));
+        }else{
+            throw new RuntimeException("brand not found");
+        }
+    }
+    public BrandDto updateState(BrandDto brandState, int id){
+        Optional<Brand> testBrand = brandRepo.findById(id);
+        if(testBrand.isPresent()){
+            Brand oldBrand=testBrand.get();
+            oldBrand.setState(brandState.getState());
             return BrandMap.toBrandDto(brandRepo.save(oldBrand));
         }else{
             throw new RuntimeException("brand not found");

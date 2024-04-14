@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/provider")
-@CrossOrigin("*")
 public class ProviderController {
     @Autowired
     ProviderFace providerFace;

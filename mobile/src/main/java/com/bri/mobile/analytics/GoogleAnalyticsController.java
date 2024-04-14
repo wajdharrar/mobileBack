@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/analytic")
-@CrossOrigin("*")
 public class GoogleAnalyticsController {
     @Autowired
     AnalyticsDataService service ;
