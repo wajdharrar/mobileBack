@@ -3,11 +3,10 @@ package com.bri.mobile.Service;
 import com.bri.mobile.DTO.Mapper.BrandMap;
 import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.Entity.Brand;
-import com.bri.mobile.Entity.User;
-import com.bri.mobile.Enum.State;
+
 import com.bri.mobile.Face.BrandFace;
 import com.bri.mobile.Repo.BrandRepo;
-import com.bri.mobile.Repo.UserRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

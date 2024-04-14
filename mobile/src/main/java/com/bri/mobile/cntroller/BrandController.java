@@ -1,14 +1,13 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.BrandDto;
-import com.bri.mobile.Entity.Brand;
-import com.bri.mobile.Enum.State;
+
 import com.bri.mobile.Face.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/brand")

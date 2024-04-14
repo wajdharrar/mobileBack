@@ -1,13 +1,11 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.UserDto;
-import com.bri.mobile.Entity.User;
 import com.bri.mobile.Face.UserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")

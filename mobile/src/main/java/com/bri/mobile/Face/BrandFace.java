@@ -1,12 +1,9 @@
 package com.bri.mobile.Face;
 
 import com.bri.mobile.DTO.model.BrandDto;
-import com.bri.mobile.Entity.Brand;
-import com.bri.mobile.Entity.User;
-import com.bri.mobile.Enum.State;
+
 
 import java.util.List;
-import java.util.Optional;
 
 public interface BrandFace {
     List<BrandDto> getAllBrands();

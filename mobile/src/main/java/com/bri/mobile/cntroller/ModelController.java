@@ -1,8 +1,6 @@
 package com.bri.mobile.cntroller;
 
-import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.DTO.model.ModelDto;
-import com.bri.mobile.Face.BrandFace;
 import com.bri.mobile.Face.ModelFace;
 import org.springframework.web.bind.annotation.*;
 
