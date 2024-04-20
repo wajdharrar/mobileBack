@@ -3,12 +3,12 @@ package com.bri.mobile.Entity;
 import com.bri.mobile.Enum.State;
 import jakarta.persistence.*;
 import lombok.*;
-import com.bri.mobile.Entity.DeviceType;
+
 
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Getter

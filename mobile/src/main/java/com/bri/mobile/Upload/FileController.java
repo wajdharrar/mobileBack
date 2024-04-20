@@ -4,7 +4,7 @@ import com.bri.mobile.Entity.*;
 import com.bri.mobile.Repo.*;
 import com.bri.mobile.tool.mail.Success;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -102,7 +102,6 @@ public class FileController {
             msg.setMsg("file uploaded");
             return msg;
         }catch(IOException e){
-            e.printStackTrace(); // Log the error or handle it appropriately
             throw new RuntimeException("Failed to upload the file");
         }
     }

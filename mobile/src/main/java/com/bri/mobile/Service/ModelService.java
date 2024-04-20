@@ -1,9 +1,8 @@
 package com.bri.mobile.Service;
 
-import com.bri.mobile.DTO.Mapper.BrandMap;
 import com.bri.mobile.DTO.Mapper.ModelMap;
 import com.bri.mobile.DTO.model.ModelDto;
-import com.bri.mobile.Entity.Brand;
+
 import com.bri.mobile.Entity.Model;
 import com.bri.mobile.Face.ModelFace;
 import com.bri.mobile.Repo.ModelRepo;

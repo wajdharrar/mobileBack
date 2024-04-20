@@ -1,9 +1,8 @@
 package com.bri.mobile.DTO.Mapper;
 
 import com.bri.mobile.DTO.model.BrandDto;
-import com.bri.mobile.DTO.model.DeviceDto;
 import com.bri.mobile.Entity.Brand;
-import com.bri.mobile.Entity.Device;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
