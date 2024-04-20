@@ -5,6 +5,7 @@ import com.bri.mobile.DTO.Mapper.ModelMap;
 import com.bri.mobile.DTO.model.ModelDto;
 import com.bri.mobile.Entity.Brand;
 import com.bri.mobile.Entity.Model;
+import com.bri.mobile.Face.ModelFace;
 import com.bri.mobile.Repo.ModelRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +14,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ModelService {
+public class ModelService implements ModelFace {
     @Autowired
     ModelRepo modelRepo;
     public List<ModelDto> getAllModels(){
         return ModelMap.toModelListDto(modelRepo.findAll());
     }
-    ModelDto getModelById(int id){
+    public ModelDto getModelById(int id){
         Optional<Model> testModel = modelRepo.findById(id);
         if(testModel.isPresent()){
             return ModelMap.toModelDto(testModel.get());
@@ -27,10 +28,10 @@ public class ModelService {
             throw new RuntimeException("model not found");
         }
     }
-    ModelDto addModel(ModelDto model){
+    public ModelDto addModel(ModelDto model){
         return ModelMap.toModelDto(modelRepo.save(ModelMap.toModelEntity(model)));
     }
-    ModelDto updateModel(ModelDto model, int id){
+    public ModelDto updateModel(ModelDto model, int id){
         Optional<Model> testModel = modelRepo.findById(id);
         if(testModel.isPresent()){
             Model oldModel=testModel.get();
@@ -42,7 +43,7 @@ public class ModelService {
             throw new RuntimeException("brand not found");
         }
     }
-    void deleteModel(int id){
+    public void deleteModel(int id){
         modelRepo.deleteById(id);
     }
 }

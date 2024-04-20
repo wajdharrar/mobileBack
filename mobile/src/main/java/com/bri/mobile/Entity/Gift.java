@@ -21,7 +21,7 @@ public class Gift {
     private int idGift;
     @Column(length = 40,nullable = false)
     private String nameGift;
-    @Column
+    @Column(length = 255000)
     private String imgGift;
     @Enumerated(EnumType.STRING)
     private State state;

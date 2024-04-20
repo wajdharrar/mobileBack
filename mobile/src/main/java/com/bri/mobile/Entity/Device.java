@@ -27,7 +27,7 @@ public class Device {
     private float price;
     @Column
     private int inventory;
-    @Column(length = 255)
+    @Column(length = 255000)
     private String imgDevice;
     @Column(length=1000)
     private String descDevice;

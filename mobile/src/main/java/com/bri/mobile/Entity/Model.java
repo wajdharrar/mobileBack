@@ -17,7 +17,7 @@ public class Model {
     private int idModel;
     @Column(length =10,nullable = false)
     private String nameModel;
-    @Column(length=255)
+    @Column(length=255000)
     private String imgModel;
     @Column(length=1000,nullable = false)
     private String descModel;

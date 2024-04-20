@@ -2,6 +2,7 @@ package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.ModelDto;
 import com.bri.mobile.Face.ModelFace;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/model")
 public class ModelController {
+    @Autowired
     ModelFace modelFace;
     @GetMapping("/all")
     List<ModelDto> getAllBrands(){

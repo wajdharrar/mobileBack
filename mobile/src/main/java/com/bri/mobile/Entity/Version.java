@@ -19,7 +19,7 @@ public class Version {
     private int idVersion;
     @Column(length =10,nullable = false)
     private String nameVersion;
-    @Column(length=255)
+    @Column(length=255000)
     private String imgVersion;
     @Column(length=1000,nullable = false)
     private String descVersion;

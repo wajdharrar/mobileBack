@@ -16,8 +16,6 @@ public class BrandMap {
                 .logoBrand(brand.getLogoBrand())
                 .descBrand(brand.getDescBrand())
                 .reason(brand.getReason())
-                .devices(DeviceMap.toDeviceListDto(brand.getDevices()))
-                .models(ModelMap.toModelListDto(brand.getModels()))
                 .state(brand.getState())
                 .build();
 
@@ -28,8 +26,6 @@ public class BrandMap {
                 .nameBrand(brandDto.getNameBrand())
                 .logoBrand(brandDto.getLogoBrand())
                 .descBrand(brandDto.getDescBrand())
-                .models(ModelMap.toModelListEntity(brandDto.getModels()))
-                .devices(DeviceMap.toDeviceListEntity(brandDto.getDevices()))
                 .state(brandDto.getState())
                 .reason(brandDto.getReason())
                 .build();

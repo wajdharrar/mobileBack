@@ -18,6 +18,4 @@ public class BrandDto {
     private String descBrand;
     private State state;
     private String reason;
-    private List<DeviceDto> devices;
-    private List <ModelDto> models;
 }
