@@ -1,6 +1,6 @@
 package com.bri.mobile.Entity;
 
-import com.bri.mobile.Enum.State;
+
 import jakarta.persistence.*;
 import lombok.*;
 

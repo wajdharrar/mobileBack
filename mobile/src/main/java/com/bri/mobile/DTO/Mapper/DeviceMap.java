@@ -2,7 +2,7 @@ package com.bri.mobile.DTO.Mapper;
 
 import com.bri.mobile.DTO.model.DeviceDto;
 import com.bri.mobile.Entity.Device;
-import com.bri.mobile.Entity.DeviceType;
+
 
 import java.util.List;
 import java.util.stream.Collectors;

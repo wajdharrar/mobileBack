@@ -1,6 +1,6 @@
 package com.bri.mobile.DTO.Mapper;
 
-import com.bri.mobile.Entity.Device;
+
 import com.bri.mobile.Entity.DeviceType;
 import com.bri.mobile.DTO.model.*;
 

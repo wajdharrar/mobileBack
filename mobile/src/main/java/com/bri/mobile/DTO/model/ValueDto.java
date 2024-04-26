@@ -1,7 +1,6 @@
 package com.bri.mobile.DTO.model;
 
-import com.bri.mobile.Entity.Feature;
-import com.bri.mobile.Enum.State;
+
 import lombok.*;
 
 @Getter

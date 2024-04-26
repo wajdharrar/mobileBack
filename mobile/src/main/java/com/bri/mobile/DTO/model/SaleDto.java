@@ -1,10 +1,10 @@
 package com.bri.mobile.DTO.model;
 
 import com.bri.mobile.Enum.State;
-import jakarta.persistence.*;
+
 import lombok.*;
 
-import java.util.List;
+
 
 @Getter
 @Setter

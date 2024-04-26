@@ -1,9 +1,8 @@
 package com.bri.mobile.DTO.model;
 
-import com.bri.mobile.Entity.DeviceType;
 import lombok.*;
 
-import java.util.List;
+
 
 @Getter
 @Setter

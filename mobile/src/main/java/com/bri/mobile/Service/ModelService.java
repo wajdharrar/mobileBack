@@ -5,7 +5,7 @@ import com.bri.mobile.DTO.model.ModelDto;
 
 import com.bri.mobile.Entity.Brand;
 import com.bri.mobile.Entity.Model;
-import com.bri.mobile.Entity.Version;
+
 import com.bri.mobile.Face.ModelFace;
 import com.bri.mobile.Repo.ModelRepo;
 import org.springframework.beans.factory.annotation.Autowired;

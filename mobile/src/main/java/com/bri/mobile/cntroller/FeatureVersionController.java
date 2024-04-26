@@ -1,14 +1,14 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.FeatureVersionDto;
-import com.bri.mobile.Entity.FeatureVersion;
+
 import com.bri.mobile.Face.FeatureVersionFace;
 import com.bri.mobile.tool.FeatureValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/faetureversion")

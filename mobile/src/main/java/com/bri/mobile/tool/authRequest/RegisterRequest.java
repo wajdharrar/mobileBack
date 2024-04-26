@@ -2,7 +2,7 @@ package com.bri.mobile.tool.authRequest;
 
 import com.bri.mobile.Entity.Role;
 import com.bri.mobile.Enum.StateUser;
-import jakarta.persistence.Column;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

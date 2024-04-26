@@ -1,8 +1,7 @@
 package com.bri.mobile.DTO.Mapper;
 
-import com.bri.mobile.DTO.model.DeviceDto;
 import com.bri.mobile.DTO.model.FeatureDto;
-import com.bri.mobile.Entity.Device;
+
 import com.bri.mobile.Entity.Feature;
 
 import java.util.List;
