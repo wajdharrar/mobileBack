@@ -43,8 +43,8 @@ public class Device {
     @JoinColumn(name = "idSale")
     private Brand.Sale sale;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idBrand")
-    private Brand brand;
+    @JoinColumn(name = "id_version")
+    private Version version;
     @ManyToMany
     @JoinTable(
             name = "cart",

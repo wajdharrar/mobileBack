@@ -1,5 +1,6 @@
-package com.bri.mobile.DTO.model;
+package com.bri.mobile.Entity;
 
+import jakarta.persistence.Embeddable;
 import lombok.*;
 
 @Getter
@@ -7,7 +8,8 @@ import lombok.*;
 @Builder(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
 @AllArgsConstructor
-public class FeatureDto {
+@Embeddable
+public class FeatureVersionId {
     private int idFeature;
-    private String nameFeature;
+    private int idVersion;
 }

@@ -25,8 +25,6 @@ public class DeviceDto{
         private State state;
         private String reason;
         private SaleDto sale;
-        private BrandDto brand;
-        private List<UserDto> users = new ArrayList<>();
-        private List<GiftDto> gifts = new ArrayList<>();
+        private VersionDto version;
         private DeviceTypeDto deviceType;
 }

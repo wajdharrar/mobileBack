@@ -1,7 +1,6 @@
 package com.bri.mobile;
 
-import com.bri.mobile.analytics.AnalyticsDataService;
-import com.bri.mobile.analytics.GoogleAnalyticsService;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

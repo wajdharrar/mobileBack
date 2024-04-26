@@ -20,9 +20,9 @@ public class Feature {
     private int idFeature;
     @Column(length = 40,nullable = false)
     private String nameFeature;
-
-    @ManyToMany
+    @Column(nullable = true)
+    private int idDeviceType;
+    @ManyToMany(mappedBy = "features")
     private List<Version> versions = new ArrayList<>();
-    @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL)
-    private List<Value> values;
+
 }

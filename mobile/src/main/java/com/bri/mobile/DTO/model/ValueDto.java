@@ -2,7 +2,6 @@ package com.bri.mobile.DTO.model;
 
 import com.bri.mobile.Entity.Feature;
 import com.bri.mobile.Enum.State;
-import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -12,9 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 public class ValueDto {
     private int idValue;
-    private String valValeu;
+    private String value;
     private String unit;
-    private State state;
-    private String reason;
-    private Feature feature;
+    private FeatureDto feature;
 }

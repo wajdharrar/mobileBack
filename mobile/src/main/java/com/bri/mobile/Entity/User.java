@@ -35,7 +35,7 @@ public class User implements UserDetails {
     private String adress;
     @Column(length=10, nullable=false)
     private String dob;
-    @Column(length=255000)
+    @Column(length=2550000)
     private String img;
     @Enumerated(EnumType.STRING)
     private StateUser stateUser;

@@ -18,5 +18,4 @@ public class SaleDto {
     private String endDate;
     private State state;
     private String reason;
-    private List<DeviceDto> devices;
 }

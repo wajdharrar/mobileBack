@@ -100,7 +100,7 @@ public class UserService implements UserFace {
     public List<UserDto> getAllPartners() {
         Role role=new Role();
         role.setNameRole("partner");
-        role.setIdRole(3);
+        role.setIdRole(2);
         List<User> users = userRepo.findByRole(role);
         List<UserDto>usersDto=new ArrayList<>();
         for (User user:users){
@@ -112,7 +112,7 @@ public class UserService implements UserFace {
     public List<UserDto> getAllClients() {
         Role role=new Role();
         role.setNameRole("client");
-        role.setIdRole(1);
+        role.setIdRole(3);
         List<User> users = userRepo.findByRole(role);
         List<UserDto>usersDto=new ArrayList<>();
         for (User user:users){

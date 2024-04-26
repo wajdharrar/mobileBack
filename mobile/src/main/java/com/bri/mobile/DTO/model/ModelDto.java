@@ -20,5 +20,4 @@ public class ModelDto {
     private State state;
     private String reason;
     private BrandDto brand;
-    private List<VersionDto> versions;
 }

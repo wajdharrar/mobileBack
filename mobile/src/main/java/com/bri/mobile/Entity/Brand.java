@@ -27,10 +27,8 @@ public class Brand {
     private State state;
     @Column(length = 1000)
     String reason;
-    @OneToMany(mappedBy = "brand" ,cascade = CascadeType.ALL)
-    private List<Device> devices;
     @OneToMany(mappedBy = "brand",cascade = CascadeType.ALL)
-    private List <Model> models;
+    private List<Model> models;
 
     @Entity
     @Getter

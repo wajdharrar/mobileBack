@@ -12,21 +12,17 @@ public class ValueMap {
     public static ValueDto toValueDto(Value value){
         return ValueDto.builder()
                 .idValue(value.getIdValue())
-                .valValeu(value.getValValeu())
-                .state(value.getState())
-                .reason(value.getReason())
+                .value(value.getValue())
                 .unit(value.getUnit())
-                .feature(value.getFeature())
+                .feature(FeatureMap.toFeatureDto(value.getFeature()))
                 .build();
     }
     public static Value toValueEntity(ValueDto valueDto){
         return Value.builder()
                 .idValue(valueDto.getIdValue())
-                .valValeu(valueDto.getValValeu())
-                .state(valueDto.getState())
-                .reason(valueDto.getReason())
+                .Value(valueDto.getValue())
                 .unit(valueDto.getUnit())
-                .feature(valueDto.getFeature())
+                .feature(FeatureMap.toFeatureEntity(valueDto.getFeature()))
                 .build();
     }
     public static List<ValueDto> toValueListDto(List<Value> values){

@@ -10,7 +10,6 @@ public class SaleMap {
                 .value(sale.getValue())
                 .startDate(sale.getStartDate())
                 .endDate(sale.getEndDate())
-                .devices(DeviceMap.toDeviceListDto(sale.getDevices()))
                 .state(sale.getState())
                 .reason(sale.getReason())
                 .build();
@@ -21,7 +20,6 @@ public class SaleMap {
                 .value(saleDto.getValue())
                 .startDate(saleDto.getStartDate())
                 .endDate(saleDto.getEndDate())
-                .devices(DeviceMap.toDeviceListEntity(saleDto.getDevices()))
                 .state(saleDto.getState())
                 .reason(saleDto.getReason())
                 .build();

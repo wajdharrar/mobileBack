@@ -2,6 +2,8 @@ package com.bri.mobile.Face;
 
 import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.DTO.model.ModelDto;
+import com.bri.mobile.Entity.Brand;
+import com.bri.mobile.Entity.Version;
 
 import java.util.List;
 
@@ -11,4 +13,5 @@ public interface ModelFace {
     ModelDto addModel(ModelDto model);
     ModelDto updateModel(ModelDto model, int id);
     void deleteModel(int id);
+    List<ModelDto> getModelByBrand(Brand brand);
 }

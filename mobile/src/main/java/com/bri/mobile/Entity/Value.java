@@ -15,14 +15,10 @@ public class Value {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idValue;
     @Column(length=10,nullable = false)
-    private String valValeu;
+    private String Value;
     @Column(length=10,nullable = false)
     private String unit;
-    @Enumerated(EnumType.STRING)
-    private State state;
-    @Column(length = 1000)
-    private String reason;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idFeature")
     private Feature feature;
 

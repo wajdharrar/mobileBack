@@ -29,23 +29,27 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final TokenRepo tokenRepo;
     public AuthenticationResponse register(RegisterRequest request) {
-        User user = User.builder()
-                .name(request.getName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .dob(request.getDob())
-                .stateUser(request.getStateUser())
-                .img(request.getImg())
-                .number(request.getNumber())
-                .adress(request.getAdress())
-                .role(request.getRole())
-                .build();
-        userRepo.save(user);
-        String jwtToken = jwtService.generateToken(user);
-        revokeAllUserTokens(user);
-        saveUserToken(user, jwtToken);
-        return AuthenticationResponse.builder().token(jwtToken).idRole(user.getRole().getIdRole()).build();
+        if(!userRepo.findByEmail(request.getEmail()).isPresent()) {
+            User user = User.builder()
+                    .name(request.getName())
+                    .lastName(request.getLastName())
+                    .email(request.getEmail())
+                    .password(passwordEncoder.encode(request.getMdp()))
+                    .dob(request.getDob())
+                    .stateUser(request.getStateUser())
+                    .img(request.getImg())
+                    .number(request.getNumber())
+                    .adress(request.getAdress())
+                    .role(request.getRole())
+                    .build();
+            userRepo.save(user);
+            String jwtToken = jwtService.generateToken(user);
+            revokeAllUserTokens(user);
+            saveUserToken(user, jwtToken);
+            return AuthenticationResponse.builder().token(jwtToken).idRole(user.getRole().getIdRole()).build();
+        }else{
+            throw new RuntimeException("email already exists");
+        }
     }
 
     private void saveUserToken(User user, String jwtToken) {

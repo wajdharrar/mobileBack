@@ -3,7 +3,9 @@ package com.bri.mobile.Service;
 import com.bri.mobile.DTO.Mapper.ModelMap;
 import com.bri.mobile.DTO.model.ModelDto;
 
+import com.bri.mobile.Entity.Brand;
 import com.bri.mobile.Entity.Model;
+import com.bri.mobile.Entity.Version;
 import com.bri.mobile.Face.ModelFace;
 import com.bri.mobile.Repo.ModelRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class ModelService implements ModelFace {
         }else {
             throw new RuntimeException("model not found");
         }
+    }
+    public List<ModelDto> getModelByBrand(Brand brand){
+        return ModelMap.toModelListDto(modelRepo.findByBrand(brand));
     }
     public ModelDto addModel(ModelDto model){
         return ModelMap.toModelDto(modelRepo.save(ModelMap.toModelEntity(model)));

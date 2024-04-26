@@ -1,6 +1,9 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.ModelDto;
+import com.bri.mobile.DTO.model.VersionDto;
+import com.bri.mobile.Entity.Brand;
+import com.bri.mobile.Entity.Version;
 import com.bri.mobile.Face.ModelFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,5 +34,9 @@ public class ModelController {
     @DeleteMapping("/delete/{id}")
     void deleteBrand(@PathVariable int id){
         modelFace.deleteModel(id);
+    }
+    @PostMapping("brand")
+    List<ModelDto> getAllModelsByBrand(@RequestBody Brand brand){
+        return modelFace.getModelByBrand(brand);
     }
 }

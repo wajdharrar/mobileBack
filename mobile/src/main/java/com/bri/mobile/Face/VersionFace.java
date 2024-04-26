@@ -1,14 +1,17 @@
 package com.bri.mobile.Face;
 
-import com.bri.mobile.Entity.Value;
-import com.bri.mobile.Entity.Version;
+import com.bri.mobile.DTO.model.VersionDto;
+import com.bri.mobile.Entity.Model;
 
 import java.util.List;
 
 public interface VersionFace {
-    List<Version> getAllVersions();
-    Version getVersionById(int id);
-    Version addVersion(Version version);
-    Version updateVersion(Version version, int id);
+    List<VersionDto> getAllVersions();
+    List<VersionDto> getVersionByModel(Model model);
+    VersionDto getVersionById(int id);
+    VersionDto addVersion(VersionDto version);
+    VersionDto updateVersion(VersionDto version, int id);
     void deleteVersion(int id);
+    VersionDto updateState(VersionDto version, int id);
+
 }

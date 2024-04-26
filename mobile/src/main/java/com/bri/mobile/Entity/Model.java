@@ -15,7 +15,7 @@ public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idModel;
-    @Column(length =10,nullable = false)
+    @Column(length =100,nullable = false)
     private String nameModel;
     @Column(length=255000)
     private String imgModel;
@@ -26,7 +26,7 @@ public class Model {
     @Column(length = 1000)
     private String reason;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_brand")
+    @JoinColumn(name = "id_Brand")
     private Brand brand;
     @OneToMany(mappedBy = "model",cascade = CascadeType.ALL)
     private List<Version> versions;
