@@ -1,8 +1,8 @@
 package com.bri.mobile.DTO.model;
 
-import com.bri.mobile.Entity.Brand;
+
 import com.bri.mobile.Enum.State;
-import jakarta.persistence.*;
+
 import lombok.*;
 
 @Getter
@@ -18,5 +18,4 @@ public class VersionDto {
     private State state;
     private String reason;
     private ModelDto model;
-
 }

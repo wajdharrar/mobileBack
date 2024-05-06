@@ -24,4 +24,8 @@ public class FeatureController {
     List<FeatureDto> getByVersionId(@PathVariable int id){
         return featureFace.getByVersionId(id);
     }
+    @GetMapping("/{id}")
+    FeatureDto getFeatureById(@PathVariable int id){
+        return featureFace.getFeatureById(id);
+    }
 }

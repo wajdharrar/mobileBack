@@ -19,5 +19,8 @@ public class FeatureVersionController {
     public List<FeatureVersionDto> addFeaturesToVersion(@RequestBody List<FeatureValue> values, @PathVariable int id){
         return featureVersionFace.addFeaturesToVersion(values,id);
     }
-
+    @GetMapping("/{id}")
+    public List<FeatureVersionDto> getAllFeaturesByIdVersion(@PathVariable int id){
+        return featureVersionFace.getAllFeaturesByIdVersion(id);
+    }
 }

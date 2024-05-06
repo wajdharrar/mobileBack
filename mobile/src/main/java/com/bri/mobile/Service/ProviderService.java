@@ -34,5 +34,8 @@ public class ProviderService implements ProviderFace {
             throw new RuntimeException("user not found");
         }
     }
-    public void deleteProvider(int id){return;}
+    public void deleteProvider(int id){
+        Provider provider=providerRepo.findByIdUser(id);
+        providerRepo.delete(provider);
+    }
 }

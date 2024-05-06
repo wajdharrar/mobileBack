@@ -27,6 +27,8 @@ public class Brand {
     private State state;
     @Column(length = 1000)
     String reason;
+    @Column
+    int idPartner;
     @OneToMany(mappedBy = "brand",cascade = CascadeType.ALL)
     private List<Model> models;
 

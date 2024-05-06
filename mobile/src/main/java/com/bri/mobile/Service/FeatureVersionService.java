@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import java.util.Optional;
 @Service
 public class FeatureVersionService implements FeatureVersionFace {
@@ -36,5 +36,19 @@ public class FeatureVersionService implements FeatureVersionFace {
             }
         }
         return featureVersionDtos;
+    }
+    @Override
+    public List<FeatureVersionDto> getAllFeaturesByIdVersion(int idVersion){
+        List <Feature> values= featureRepo.findByVersionId(idVersion);
+        if(!values.isEmpty()){
+            List<FeatureVersionDto> featureVersionDtos = new ArrayList<>(values.size());
+            for (Feature value : values) {
+                FeatureVersionId featureVersionId = new FeatureVersionId(value.getIdFeature(), idVersion);
+                featureVersionDtos.add(FeatureVersionMap.toFeatureVersionDto(featureVersionRepo.findById(featureVersionId).get()));
+            }
+            return featureVersionDtos;
+        }else{
+            throw new RuntimeException("features Not Found");
+        }
     }
 }

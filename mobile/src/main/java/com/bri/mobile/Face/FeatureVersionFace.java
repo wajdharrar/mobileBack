@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface FeatureVersionFace {
     List<FeatureVersionDto> addFeaturesToVersion(List<FeatureValue> values, int idVersion);
+    List<FeatureVersionDto> getAllFeaturesByIdVersion(int idVersion);
 }

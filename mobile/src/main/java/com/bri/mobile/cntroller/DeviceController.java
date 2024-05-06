@@ -1,6 +1,7 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.DeviceDto;
+import com.bri.mobile.DTO.model.DeviceTypeDto;
 import com.bri.mobile.Face.DeviceFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +23,15 @@ public class DeviceController {
     }
     @PostMapping("/add")
     DeviceDto addDevice(@RequestBody DeviceDto deviceDto){
-        System.out.println(deviceDto.getDeviceType().getIdType());
-        return deviceFace.addPhone(deviceDto);
+        return deviceFace.addDevice(deviceDto);
     }
-    @PutMapping("/update/{id}")
-    DeviceDto updateDevice(@RequestBody DeviceDto deviceDto,@PathVariable int id){
-        return deviceFace.updatePhone(deviceDto,id);
+    @PostMapping("/device")
+    List<DeviceDto> getAllDevicesByDeviceType(@RequestBody DeviceTypeDto deviceTypeDto){
+        return deviceFace.getAllDevicesByDeviceType(deviceTypeDto);
+    }
+    @PutMapping("/updatestate/{id}")
+    DeviceDto updateState(@RequestBody DeviceDto deviceDto,@PathVariable int id){
+        return deviceFace.updateState(id,deviceDto);
     }
     @DeleteMapping("/delete/{id}")
     void deleteDevice(@PathVariable int id){

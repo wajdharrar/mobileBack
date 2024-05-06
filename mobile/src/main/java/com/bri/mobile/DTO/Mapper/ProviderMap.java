@@ -11,7 +11,7 @@ public class ProviderMap {
                 .lastNameRes(provider.getLastNameRes())
                 .emailRes(provider.getEmailRes())
                 .numberRes(provider.getNumberRes())
-                .devices(DeviceMap.toDeviceListDto(provider.getDevices()))
+                .idUser(provider.getIdUser())
                 .build();
     }
     public static Provider toProviderEntity(ProviderDto providerDto){
@@ -21,7 +21,7 @@ public class ProviderMap {
                 .lastNameRes(providerDto.getLastNameRes())
                 .emailRes(providerDto.getEmailRes())
                 .numberRes(providerDto.getNumberRes())
-                .devices(DeviceMap.toDeviceListEntity(providerDto.getDevices()))
+                .idUser(providerDto.getIdUser())
                 .build();
     }
 }

@@ -1,6 +1,7 @@
 package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.ProviderDto;
+
 import com.bri.mobile.Face.ProviderFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,5 +22,9 @@ public class ProviderController {
     @PutMapping("/update/{id}")
     ProviderDto updateProvider(@RequestBody ProviderDto providerDto,@PathVariable int id ){
         return providerFace.updateProvider(providerDto,id);
+    }
+    @DeleteMapping("delete/{id}")
+    public void deleteProvider(@PathVariable  int id){
+        providerFace.deleteProvider(id);
     }
 }

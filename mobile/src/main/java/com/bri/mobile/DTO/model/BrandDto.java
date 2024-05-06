@@ -17,4 +17,5 @@ public class BrandDto {
     private String descBrand;
     private State state;
     private String reason;
+    private int idPartner;
 }

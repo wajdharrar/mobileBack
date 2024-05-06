@@ -16,6 +16,7 @@ public class BrandMap {
                 .descBrand(brand.getDescBrand())
                 .reason(brand.getReason())
                 .state(brand.getState())
+                .idPartner(brand.getIdPartner())
                 .build();
 
     }
@@ -27,6 +28,7 @@ public class BrandMap {
                 .descBrand(brandDto.getDescBrand())
                 .state(brandDto.getState())
                 .reason(brandDto.getReason())
+                .idPartner(brandDto.getIdPartner())
                 .build();
     }
     public static List<BrandDto> toDeviceListDto(List<Brand> brands ){
