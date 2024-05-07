@@ -1,9 +1,9 @@
 package com.bri.mobile.DTO.Mapper;
 
 import com.bri.mobile.DTO.model.ProviderDeviceDto;
-import com.bri.mobile.DTO.model.RoleDto;
+
 import com.bri.mobile.Entity.ProviderDevice;
-import com.bri.mobile.Entity.Role;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
