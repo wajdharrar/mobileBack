@@ -40,6 +40,7 @@ public class BrandService implements BrandFace {
             oldBrand.setNameBrand(brand.getNameBrand());
             oldBrand.setLogoBrand(brand.getLogoBrand());
             oldBrand.setDescBrand(brand.getDescBrand());
+            oldBrand.setIdPartner(brand.getIdPartner());
             return BrandMap.toBrandDto(brandRepo.save(oldBrand));
         }else{
             throw new RuntimeException("brand not found");
@@ -58,4 +59,6 @@ public class BrandService implements BrandFace {
     public void deleteBrand(int id){
         brandRepo.deleteById(id);
     }
+    public List<BrandDto> getBrandsByPartner(int idPartner){
+        return BrandMap.toDeviceListDto(brandRepo.findByIdPartner(idPartner));}
 }

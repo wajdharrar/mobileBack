@@ -21,5 +21,4 @@ public class Value {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idFeature")
     private Feature feature;
-
 }

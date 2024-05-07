@@ -18,6 +18,10 @@ public class BrandController {
     List<BrandDto> getAllBrands(){
         return brandFace.getAllBrands();
     }
+    @GetMapping("/all/{idPartner}")
+    List<BrandDto> getAllBrandsByIdPartner(@PathVariable int idPartner){
+        return brandFace.getBrandsByPartner(idPartner);
+    }
     @PostMapping("/add")
     BrandDto addBrand(@RequestBody BrandDto brand){
         System.out.println(brand);

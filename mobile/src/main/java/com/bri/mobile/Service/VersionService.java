@@ -22,6 +22,10 @@ public class VersionService implements VersionFace {
         return VersionMap.toVersionListDto(versionRepo.findAll());
     }
     @Override
+    public List<VersionDto> getAllVersionsByIdPartners(int idPartner){
+        return VersionMap.toVersionListDto(versionRepo.findByPartnerId(idPartner));
+    }
+    @Override
     public VersionDto getVersionById(int id){
         Optional<Version> testVersion = versionRepo.findById(id);
         if(testVersion.isPresent()){
@@ -63,5 +67,8 @@ public class VersionService implements VersionFace {
     }
     public List<VersionDto> getVersionByModel(Model model){
         return VersionMap.toVersionListDto(versionRepo.findByModel(model));
+    }
+    public Integer getAllPartnersId(int idVersion){
+        return versionRepo.findIdPartners(idVersion);
     }
 }

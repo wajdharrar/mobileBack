@@ -59,6 +59,14 @@ public class Device {
             inverseJoinColumns = @JoinColumn(name = "idGift")
     )
     private List<Gift> gifts = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "providerDevice",
+            joinColumns = @JoinColumn(name = "idDevice"),
+            inverseJoinColumns = @JoinColumn(name = "idProvider")
+    )
+    private List<Provider> providers = new ArrayList<>();
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn (name="idType")
     private DeviceType deviceType;

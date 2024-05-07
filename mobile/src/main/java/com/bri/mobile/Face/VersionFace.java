@@ -13,5 +13,7 @@ public interface VersionFace {
     VersionDto updateVersion(VersionDto version, int id);
     void deleteVersion(int id);
     VersionDto updateState(VersionDto version, int id);
+    public List<VersionDto> getAllVersionsByIdPartners(int idPartner);
+    public Integer getAllPartnersId(int idVersion);
 
 }

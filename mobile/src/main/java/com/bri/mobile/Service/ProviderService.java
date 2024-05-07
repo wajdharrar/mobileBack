@@ -16,7 +16,8 @@ public class ProviderService implements ProviderFace {
     ProviderRepo providerRepo;
     public List<ProviderDto> getAllProviders(){return null;}
     public ProviderDto getProviderByIdUser(int id){
-        return ProviderMap.toProviderdto(providerRepo.findByIdUser(id));
+        return ProviderMap.toProviderdto(
+                providerRepo.findByIdUser(id));
     }
     public ProviderDto addProvider(ProviderDto providerDto){
         Provider provider= ProviderMap.toProviderEntity(providerDto);

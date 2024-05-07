@@ -21,6 +21,10 @@ public class ModelService implements ModelFace {
     public List<ModelDto> getAllModels(){
         return ModelMap.toModelListDto(modelRepo.findAll());
     }
+    public List<ModelDto> getAllModelsByPartner(int idPartner){
+        return ModelMap.toModelListDto(modelRepo.findByIdPartner(idPartner));
+    }
+
     public ModelDto getModelById(int id){
         Optional<Model> testModel = modelRepo.findById(id);
         if(testModel.isPresent()){
@@ -49,5 +53,8 @@ public class ModelService implements ModelFace {
     }
     public void deleteModel(int id){
         modelRepo.deleteById(id);
+    }
+    public Integer getAllPartnersId(int idModel){
+        return modelRepo.findIdPartners(idModel);
     }
 }

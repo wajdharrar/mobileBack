@@ -19,6 +19,14 @@ public class ModelController {
     List<ModelDto> getAllBrands(){
         return modelFace.getAllModels();
     }
+    @GetMapping("/all/{idPartner}")
+    List<ModelDto> getAllBrandsByPartner(@PathVariable int idPartner){
+        return modelFace.getAllModelsByPartner(idPartner);
+    }
+    @GetMapping("/idPartners/{idVersion}")
+    public Integer getAllPartnersId(@PathVariable int idVersion){
+        return modelFace.getAllPartnersId(idVersion);
+    }
     @PostMapping("/add")
     ModelDto addBrand(@RequestBody ModelDto model){
         return  modelFace.addModel(model);

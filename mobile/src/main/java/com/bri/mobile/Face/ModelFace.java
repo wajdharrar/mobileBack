@@ -13,4 +13,6 @@ public interface ModelFace {
     ModelDto updateModel(ModelDto model, int id);
     void deleteModel(int id);
     List<ModelDto> getModelByBrand(Brand brand);
+    public List<ModelDto> getAllModelsByPartner(int idPartner);
+    public Integer getAllPartnersId(int idModel);
 }
