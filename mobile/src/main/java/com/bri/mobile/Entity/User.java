@@ -42,13 +42,10 @@ public class User implements UserDetails {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_role")
     private Role role;
-    @OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL)
-    private List<Request> requests;
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Token> tokens;
-    @ManyToMany(mappedBy = "users")
-    private List<Device> devices = new ArrayList<>();
-
+    @OneToMany(mappedBy = "user")
+    private List<Request> requests;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.getNameRole()));

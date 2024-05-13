@@ -14,17 +14,17 @@ public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idDocument;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String nationalId;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String birthCertificate;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String proofOfIncome;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String proofOfEmployement;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String taxReturn;
-    @Column(length = 1000,nullable = false)
+    @Column(length = 13981013,nullable = false)
     private String bankStatement;
     @Enumerated(EnumType.STRING)
     private State state;

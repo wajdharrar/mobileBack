@@ -23,15 +23,23 @@ public class GoogleAnalyticsController {
         return service.fetchEventsAndProcess();
     }
     @GetMapping("page")
-    List<AnalyticsData> getPage(){
+    List<AnalyticPageTab> getPage(){
         return service.fetchPathAndProcess();
     }
     @GetMapping("buyer")
     List<AnalyticsData> getBuyer(){
-        return service.fetchBuyersAndProcess();
+        return service.fetchCityAndProcess();
     }
     @GetMapping("scroll")
-    List<AnalyticsData> getScroller(){
-        return service.fetchScrollAndProcess();
+    List<AnalyticCityTab> getScroller(){
+        return service.fetchCityTabAndProcess();
+    }
+    @GetMapping("/city/time")
+    List<AnalyticCityTime> getCityTime(){
+        return service.fetchCityTimeAndProcess();
+    }
+    @GetMapping("/bounce")
+    AnalyticsData getBounceRate(){
+        return service.fetchBounceRateAndProcess();
     }
 }

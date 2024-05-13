@@ -2,6 +2,7 @@ package com.bri.mobile.cntroller;
 
 import com.bri.mobile.DTO.model.UserDto;
 import com.bri.mobile.Face.UserFace;
+import com.bri.mobile.tool.stat.UserRoleCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,10 @@ public class UserControler {
     @GetMapping("/all")
     List<UserDto>getAllUsers(){
         return userFace.getAllUsers();
+    }
+    @GetMapping("/role")
+    List<UserRoleCount>getUsersByRole(){
+        return userFace.countUsersByRole();
     }
     @PostMapping("/add")
     UserDto addUser(@RequestBody UserDto user){

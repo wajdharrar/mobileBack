@@ -20,8 +20,6 @@ public class DocumentMap {
                 .proofOfIncome(document.getProofOfIncome())
                 .taxReturn(document.getTaxReturn())
                 .request(RequestMap.toRequestDto(document.getRequest()))
-                .state(document.getState())
-                .reason(document.getReason())
                 .build();
     }
     public static Document toDocumentEntity (DocumentDto documentDto){
@@ -35,8 +33,6 @@ public class DocumentMap {
                 .proofOfIncome(documentDto.getProofOfIncome())
                 .taxReturn(documentDto.getTaxReturn())
                 .request(RequestMap.toRequestEntity(documentDto.getRequest()))
-                .state(documentDto.getState())
-                .reason(documentDto.getReason())
                 .build();
     }
     public static List<DocumentDto> toDocumentListDto(List<Document> documents){

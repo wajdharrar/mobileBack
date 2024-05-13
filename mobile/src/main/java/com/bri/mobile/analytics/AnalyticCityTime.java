@@ -1,11 +1,10 @@
 package com.bri.mobile.analytics;
 
-
 import lombok.Data;
 
-
 @Data
-public class AnalyticsData {
+public class AnalyticCityTime {
     private String dimensionValues;
     private String metricValue;
+    private String date;
 }

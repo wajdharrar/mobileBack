@@ -8,6 +8,7 @@ import com.bri.mobile.Entity.Role;
 import com.bri.mobile.Entity.User;
 import com.bri.mobile.Face.UserFace;
 import com.bri.mobile.Repo.UserRepo;
+import com.bri.mobile.tool.stat.UserRoleCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 public class UserService implements UserFace {
     @Autowired
@@ -119,5 +122,12 @@ public class UserService implements UserFace {
             usersDto.add(UserMap.toUserDto(user));
         }
         return usersDto;
+    }
+    public List<UserRoleCount> countUsersByRole() {
+        List<Object[]> userRoleCounts = userRepo.countUsersByRole();
+
+        return userRoleCounts.stream()
+                .map(objects -> new UserRoleCount((String) objects[0], (Long) objects[1]))
+                .collect(Collectors.toList());
     }
 }

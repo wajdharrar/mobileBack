@@ -23,18 +23,20 @@ public class Request {
     @Column(nullable = false)
     private Date date;
     @Column(nullable = false)
-    private float equity;
+    private float initialPayment;
+    @Column(nullable = false)
+    private int warranty;
     @Column(nullable = false)
     private int repayement;
     @Enumerated(EnumType.STRING)
     private State state;
     @Column(length = 1000)
     private String reason;
-    @Enumerated(EnumType.STRING)
-    private BorrowerType borowerType;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    @OneToMany(mappedBy = "request",cascade = CascadeType.ALL)
+    private List<Cart> carts;
     @OneToMany(mappedBy = "request",cascade = CascadeType.ALL)
     private List<Document> documents;
 }

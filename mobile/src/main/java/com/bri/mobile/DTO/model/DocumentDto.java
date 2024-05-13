@@ -1,6 +1,5 @@
 package com.bri.mobile.DTO.model;
 
-import com.bri.mobile.Entity.Request;
 import com.bri.mobile.Enum.State;
 import lombok.*;
 
@@ -17,7 +16,5 @@ public class DocumentDto {
     private String proofOfEmployement;
     private String taxReturn;
     private String bankStatement;
-    private State state;
-    private String reason;
     private RequestDto request;
 }

@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -28,7 +26,7 @@ public class Provider{
     private String numberRes;
     @OneToMany(mappedBy = "provider", cascade = CascadeType.ALL)
     private List<Shop> shops;
-    @ManyToMany
+    @ManyToMany(mappedBy = "providers")
     private List<Device> devices = new ArrayList<>();
     @Column
     private int idUser;

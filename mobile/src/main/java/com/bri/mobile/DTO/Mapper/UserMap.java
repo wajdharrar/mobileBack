@@ -22,7 +22,6 @@ public class UserMap {
                 .img(user.getImg())
                 .stateUser(user.getStateUser())
                 .role(RoleMap.toRoleDto(user.getRole()))
-                .devices(DeviceMap.toDeviceListDto(user.getDevices()))
                 .build();
     }
     public static User toUserEntity(UserDto userDto){
@@ -38,7 +37,6 @@ public class UserMap {
                 .img(userDto.getImg())
                 .stateUser(userDto.getStateUser())
                 .role(RoleMap.toRoleEntity(userDto.getRole()))
-                .devices(DeviceMap.toDeviceListEntity(userDto.getDevices()))
                 .build();
     }
     public static List<UserDto> toUserListDto(List<User> users){

@@ -1,14 +1,12 @@
 package com.bri.mobile.Face;
 
-import com.bri.mobile.Entity.Cart;
-import com.bri.mobile.Entity.User;
+import com.bri.mobile.DTO.model.CartDto;
+import com.bri.mobile.Entity.Request;
 
 import java.util.List;
 
 public interface CartFace {
-    List<Cart> getAllCarts();
-    Cart getCartById(int id);
-    Cart addCart(Cart cart);
-    Cart updateCart(Cart cart, int id);
-    void deleteCart(int id);
+    List<CartDto> addToCart(List<CartDto> items);
+    List<CartDto> getByIdRequest(Request request);
+    void deleteCart(List <CartDto> items);
 }

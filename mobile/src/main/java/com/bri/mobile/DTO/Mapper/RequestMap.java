@@ -12,25 +12,23 @@ public class RequestMap {
     public static RequestDto toRequestDto (Request request){
         return RequestDto.builder()
                 .idRequest(request.getIdRequest())
-                .equity(request.getEquity())
+                .initialPayment(request.getInitialPayment())
+                .warranty(request.getWarranty())
                 .repayement(request.getRepayement())
                 .state(request.getState())
-                .borrowerType(request.getBorowerType())
-                .user(UserMap.toUserDto(request.getUser()))
                 .date(request.getDate())
-                .documents(DocumentMap.toDocumentListDto(request.getDocuments()))
+                .user(UserMap.toUserDto(request.getUser()))
                 .build();
     }
     public static Request toRequestEntity (RequestDto requestDto){
         return Request.builder()
                 .idRequest(requestDto.getIdRequest())
-                .equity(requestDto.getEquity())
+                .initialPayment(requestDto.getInitialPayment())
+                .warranty(requestDto.getWarranty())
                 .repayement(requestDto.getRepayement())
-                .borowerType(requestDto.getBorrowerType())
                 .state(requestDto.getState())
-                .user(UserMap.toUserEntity(requestDto.getUser()))
                 .date(requestDto.getDate())
-                .documents(DocumentMap.toDocumentListEntity(requestDto.getDocuments()))
+                .user(UserMap.toUserEntity(requestDto.getUser()))
                 .build();
     }
     public static List<RequestDto> toRequestListDto(List<Request> requests){

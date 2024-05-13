@@ -14,7 +14,7 @@ public class Value {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idValue;
-    @Column(length=10,nullable = false)
+    @Column(length=100,nullable = false)
     private String Value;
     @Column(length=10,nullable = false)
     private String unit;

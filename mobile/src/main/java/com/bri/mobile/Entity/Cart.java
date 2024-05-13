@@ -1,8 +1,6 @@
 package com.bri.mobile.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -12,15 +10,21 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cart {
-    @EmbeddedId
-    private UserPhoneId idCart;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int idCart;
     @Column
     private float total;
     @Column
     private int itemNumber;
+    @ManyToOne
+    @JoinColumn(name = "request_id", nullable = false)
+    private Request request;
 
+    @ManyToOne
+    @JoinColumn(name = "device_id", nullable = false)
+    private Device device;
 }
-
 
 
 

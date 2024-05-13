@@ -1,8 +1,7 @@
 package com.bri.mobile.DTO.model;
 
-import com.bri.mobile.Entity.UserPhoneId;
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
+
+import com.bri.mobile.Entity.Request;
 import lombok.*;
 
 @Getter
@@ -11,7 +10,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartDto {
-    private UserPhoneIdDto idCart;
+    private int idCart;
     private float total;
     private int itemNumber;
+    private RequestDto request;
+    private DeviceDto device;
 }

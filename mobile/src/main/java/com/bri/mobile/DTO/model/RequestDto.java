@@ -19,15 +19,12 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestDto {
-
     private int idRequest;
     private Date date;
-    private float equity;
+    private float initialPayment;
+    private int warranty;
     private int repayement;
-    private BorrowerType borrowerType;
     private State state;
     private String reason;
     private UserDto user;
-    private List<DocumentDto> documents;
-
 }

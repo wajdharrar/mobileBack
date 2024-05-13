@@ -45,13 +45,8 @@ public class Device {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_version")
     private Version version;
-    @ManyToMany
-    @JoinTable(
-            name = "cart",
-            joinColumns = @JoinColumn(name = "idPhone"),
-            inverseJoinColumns = @JoinColumn(name = "idUser")
-    )
-    private List<User> users = new ArrayList<>();
+    @OneToMany(mappedBy = "device")
+    private List<Cart> cart;
     @ManyToMany
     @JoinTable(
             name = "giftPhone",
