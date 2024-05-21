@@ -45,7 +45,7 @@ public class Device {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_version")
     private Version version;
-    @OneToMany(mappedBy = "device")
+    @OneToMany(mappedBy = "device",cascade = CascadeType.ALL)
     private List<Cart> cart;
     @ManyToMany
     @JoinTable(

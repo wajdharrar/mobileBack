@@ -3,6 +3,8 @@ package com.bri.mobile.cntroller;
 import com.bri.mobile.DTO.model.BrandDto;
 
 import com.bri.mobile.Face.*;
+
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,5 +44,9 @@ public class BrandController {
     @DeleteMapping("/delete/{id}")
     void deleteBrand(@PathVariable int id){
         brandFace.deleteBrand(id);
+    }
+    @GetMapping("/count/state/{id}")
+    List<EntityStateCount> countBrandsByState(@PathVariable Long id){
+        return  brandFace.countBrandsByState(id);
     }
 }

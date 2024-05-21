@@ -9,13 +9,17 @@ import com.bri.mobile.DTO.model.DeviceTypeDto;
 
 import com.bri.mobile.Entity.Device;
 
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.DeviceFace;
 import com.bri.mobile.Repo.DeviceRepo;
+import com.bri.mobile.tool.stat.DeviceAttributeCount;
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class DeviceService implements DeviceFace {
@@ -72,4 +76,29 @@ public class DeviceService implements DeviceFace {
             throw new RuntimeException("device not found");
         }
     }
+    public List<EntityStateCount>countDevicesByState(Long id){
+        List<Object[]>deviceCount=deviceRepo.countDevicesByState(id);
+        return deviceCount.stream()
+                .map(objects -> new EntityStateCount((State) objects[0],(Long) objects[1]))
+                .collect(Collectors.toList());
+    }
+    public List<DeviceAttributeCount>countDevicesByBrand(Long id){
+        List<Object[]> brandCount=deviceRepo.countDevicesByBrand(id);
+        return brandCount.stream()
+                .map(objects -> new DeviceAttributeCount((String) objects[0],(Long) objects[1]))
+                .collect(Collectors.toList());
+    }
+    public List<DeviceAttributeCount>countDevicesByModel(Long id){
+        List<Object[]> modelCount=deviceRepo.countDevicesByModel(id);
+        return modelCount.stream()
+                .map(objects -> new DeviceAttributeCount((String) objects[0],(Long) objects[1]))
+                .collect(Collectors.toList());
+    }
+    public List<DeviceAttributeCount> countDevicesByDeviceType(Long id){
+        List<Object[]> deviceTypeCount=deviceRepo.countDevicesByDeviceType(id);
+        return deviceTypeCount.stream()
+                .map(objects -> new DeviceAttributeCount((String) objects[0],(Long)objects[1]))
+                .collect(Collectors.toList());
+    }
+
 }

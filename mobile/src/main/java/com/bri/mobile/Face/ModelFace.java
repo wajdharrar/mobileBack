@@ -2,6 +2,7 @@ package com.bri.mobile.Face;
 
 import com.bri.mobile.DTO.model.ModelDto;
 import com.bri.mobile.Entity.Brand;
+import com.bri.mobile.tool.stat.EntityStateCount;
 
 
 import java.util.List;
@@ -15,4 +16,5 @@ public interface ModelFace {
     List<ModelDto> getModelByBrand(Brand brand);
     public List<ModelDto> getAllModelsByPartner(int idPartner);
     public Integer getAllPartnersId(int idModel);
+    List <EntityStateCount>countModelsByState(Long id);
 }

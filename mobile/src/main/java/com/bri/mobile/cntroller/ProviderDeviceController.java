@@ -1,5 +1,6 @@
 package com.bri.mobile.cntroller;
 
+import com.bri.mobile.DTO.model.DeviceDto;
 import com.bri.mobile.DTO.model.ProviderDeviceDto;
 import com.bri.mobile.Face.ProviderDeviceFace;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,9 @@ public class ProviderDeviceController {
     @GetMapping("/all")
     List<ProviderDeviceDto> getAll(){
         return providerDeviceFace.getAllProviderDevice();
+    }
+    @GetMapping("/home/device")
+    List <DeviceDto>findTop8ByOrderByCreatedAtDesc(){
+        return providerDeviceFace.findTop8ByOrderByCreatedAtDesc();
     }
 }

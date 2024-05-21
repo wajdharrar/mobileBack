@@ -6,13 +6,16 @@ import com.bri.mobile.DTO.model.ModelDto;
 import com.bri.mobile.Entity.Brand;
 import com.bri.mobile.Entity.Model;
 
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.ModelFace;
 import com.bri.mobile.Repo.ModelRepo;
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ModelService implements ModelFace {
@@ -56,5 +59,11 @@ public class ModelService implements ModelFace {
     }
     public Integer getAllPartnersId(int idModel){
         return modelRepo.findIdPartners(idModel);
+    }
+    public List <EntityStateCount>countModelsByState(Long id){
+        List<Object[]>modelCount=modelRepo.countModelsByState(id);
+        return modelCount.stream()
+                .map(objects -> new EntityStateCount((State) objects[0],(Long)objects[1]))
+                .collect(Collectors.toList());
     }
 }

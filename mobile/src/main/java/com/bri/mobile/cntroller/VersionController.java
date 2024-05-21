@@ -6,6 +6,7 @@ import com.bri.mobile.DTO.model.VersionDto;
 import com.bri.mobile.Entity.Model;
 
 import com.bri.mobile.Face.VersionFace;
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,4 +53,8 @@ public class VersionController {
     void deleteVersion(@PathVariable int id){
             versionFace.deleteVersion(id);
         }
+    @GetMapping("/count/state/{id}")
+    List<EntityStateCount>countVersionsByState(@PathVariable Long id){
+        return versionFace.countVersionsByState(id);
+    }
 }

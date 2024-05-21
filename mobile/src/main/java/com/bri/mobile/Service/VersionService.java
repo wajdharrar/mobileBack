@@ -6,13 +6,17 @@ import com.bri.mobile.DTO.Mapper.VersionMap;
 import com.bri.mobile.DTO.model.VersionDto;
 import com.bri.mobile.Entity.Model;
 import com.bri.mobile.Entity.Version;
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.VersionFace;
 import com.bri.mobile.Repo.VersionRepo;
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 public class VersionService implements VersionFace {
     @Autowired
@@ -70,5 +74,11 @@ public class VersionService implements VersionFace {
     }
     public Integer getAllPartnersId(int idVersion){
         return versionRepo.findIdPartners(idVersion);
+    }
+    public List<EntityStateCount>countVersionsByState(Long id){
+        List<Object[]> versionCount=versionRepo.countVersionsByState(id);
+        return versionCount.stream()
+                .map(objects -> new EntityStateCount((State) objects[0],(Long) objects[1]))
+                .collect(Collectors.toList());
     }
 }

@@ -16,4 +16,6 @@ public interface VersionRepo extends JpaRepository<Version,Integer> {
     List<Version> findByPartnerId(@Param("partnerId") int partnerId);
     @Query("SELECT v.model.brand.idPartner FROM Version v where v.idVersion = :idVersion")
     Integer findIdPartners(@Param("idVersion") int idVersion);
+    @Query("SELECT v.state, COUNT(v) FROM Version v JOIN v.model m JOIN m.brand b WHERE b.idPartner = :idPartner GROUP BY v.state")
+    List<Object[]> countVersionsByState(@Param("idPartner") Long idPartner);
 }

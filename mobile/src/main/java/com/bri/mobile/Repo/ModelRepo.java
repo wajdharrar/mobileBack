@@ -15,4 +15,6 @@ public interface ModelRepo extends JpaRepository<Model,Integer> {
     List<Model> findByIdPartner(@Param("partnerId") int partnerId);
     @Query("SELECT m.brand.idPartner FROM Model m WHERE m.idModel = :idModel")
     Integer findIdPartners(@Param("idModel") int idModel);
+    @Query("SELECT m.state, COUNT(m) FROM Model m JOIN m.brand b WHERE b.idPartner = :idPartner GROUP BY m.state")
+    List<Object[]> countModelsByState(@Param("idPartner") Long idPartner);
 }

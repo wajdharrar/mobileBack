@@ -5,6 +5,7 @@ import com.bri.mobile.DTO.model.ModelDto;
 import com.bri.mobile.Entity.Brand;
 
 import com.bri.mobile.Face.ModelFace;
+import com.bri.mobile.tool.stat.EntityStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,5 +47,9 @@ public class ModelController {
     @PostMapping("brand")
     List<ModelDto> getAllModelsByBrand(@RequestBody Brand brand){
         return modelFace.getModelByBrand(brand);
+    }
+    @GetMapping("/count/state/{id}")
+    List<EntityStateCount>countModelsByState(@PathVariable Long id){
+        return modelFace.countModelsByState(id);
     }
 }

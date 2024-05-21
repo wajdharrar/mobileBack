@@ -2,6 +2,7 @@ package com.bri.mobile.Face;
 
 import com.bri.mobile.DTO.model.VersionDto;
 import com.bri.mobile.Entity.Model;
+import com.bri.mobile.tool.stat.EntityStateCount;
 
 import java.util.List;
 
@@ -15,5 +16,6 @@ public interface VersionFace {
     VersionDto updateState(VersionDto version, int id);
     public List<VersionDto> getAllVersionsByIdPartners(int idPartner);
     public Integer getAllPartnersId(int idVersion);
+    List<EntityStateCount>countVersionsByState(Long id);
 
 }

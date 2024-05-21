@@ -22,4 +22,11 @@ public interface RequestFace {
     List<RequestBrandCount> countRequestsByBrand();
     List<RequestDeviceTypeCount> countRequestsByDeviceType();
     List<RequestProviderCount> countRequestsByProvider();
+    double countRequestForPartner(Long id);
+    List<DeviceAttributeCount> countRequestsByBrandForPartner(Long id);
+    List<DeviceAttributeCount> countRequestsByDeviceForPartner(Long id);
+    List<DeviceAttributeCount> countRequestsByModelForPartner(Long id);
+    List<DeviceAttributeCount> countRequestsByVersionForPartner(Long id);
+    List<DeviceAttributeCount> countRequestsByDeviceType(Long id);
+    List<EntityStateCount>countRequestsByStateForUser(Long id);
 }

@@ -40,7 +40,7 @@ public class RequestController {
     }
     @PutMapping("/updatestate/{id}")
     RequestDto updateRequestState(@PathVariable int id,@RequestBody RequestDto requestDto){
-        return requestService.updateRequest(requestDto,id);
+        return requestService.updateState(requestDto,id);
     }
     @GetMapping("/total")
     double getTotal(){
@@ -69,5 +69,37 @@ public class RequestController {
     @GetMapping("/partner")
     List<RequestProviderCount> getRequestByPartner(){
         return requestService.countRequestsByProvider();
+    }
+    @GetMapping("/total/partner/{id}")
+    double pr(@PathVariable Long id){
+        return requestService.countRequestForPartner(id);
+    }
+    @GetMapping("/total/requests/{id}")
+    Long countRequestsForPartner(@PathVariable Long id){
+        return requestService.countRequestsForPartner(id);
+    }
+    @GetMapping("/brand/partner/{id}")
+    List<DeviceAttributeCount> p(@PathVariable Long id){
+        return requestService.countRequestsByBrandForPartner(id);
+    }
+    @GetMapping("/device/partner/{id}")
+    List<DeviceAttributeCount> countRequestsByDeviceForPartner(@PathVariable Long id){
+        return requestService.countRequestsByDeviceForPartner(id);
+    }
+    @GetMapping("/model/partner/{id}")
+    List<DeviceAttributeCount> countRequestsByModelForPartner(@PathVariable Long id){
+        return requestService.countRequestsByModelForPartner(id);
+    }
+    @GetMapping("/version/partner/{id}")
+    List<DeviceAttributeCount> countRequestsByVersionForPartner(@PathVariable Long id){
+        return requestService.countRequestsByVersionForPartner(id);
+    }
+    @GetMapping("/devicetype/partner/{id}")
+    List<DeviceAttributeCount> countRequestsByDeviceType(@PathVariable Long id){
+        return requestService.countRequestsByDeviceType(id);
+    }
+    @GetMapping("/state/client/{id}")
+    List <EntityStateCount>countRequestsByStateForUser(@PathVariable Long id){
+        return requestService.countRequestsByStateForUser(id);
     }
 }

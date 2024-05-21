@@ -4,14 +4,18 @@ import com.bri.mobile.DTO.Mapper.BrandMap;
 import com.bri.mobile.DTO.model.BrandDto;
 import com.bri.mobile.Entity.Brand;
 
+import com.bri.mobile.Enum.State;
 import com.bri.mobile.Face.BrandFace;
 import com.bri.mobile.Repo.BrandRepo;
 
+import com.bri.mobile.tool.stat.EntityStateCount;
+import com.bri.mobile.tool.stat.RequestStateCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class BrandService implements BrandFace {
@@ -61,4 +65,11 @@ public class BrandService implements BrandFace {
     }
     public List<BrandDto> getBrandsByPartner(int idPartner){
         return BrandMap.toDeviceListDto(brandRepo.findByIdPartner(idPartner));}
+    public List<EntityStateCount> countBrandsByState(Long id) {
+        List<Object[]> brandStateCount = brandRepo.countBrandsByState(id);
+
+        return brandStateCount.stream()
+                .map(objects -> new EntityStateCount((State) objects[0], (Long) objects[1]))
+                .collect(Collectors.toList());
+    }
 }

@@ -2,6 +2,8 @@ package com.bri.mobile.Face;
 
 import com.bri.mobile.DTO.model.BrandDto;
 
+import com.bri.mobile.tool.stat.EntityStateCount;
+
 
 import java.util.List;
 
@@ -13,4 +15,5 @@ public interface BrandFace {
     void deleteBrand(int id);
     public BrandDto updateState(BrandDto brandState, int id);
     public List<BrandDto> getBrandsByPartner(int idPartner);
+    public List<EntityStateCount> countBrandsByState(Long id);
     }

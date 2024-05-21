@@ -6,8 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -26,5 +25,4 @@ public class UserDto {
     private String img;
     private StateUser stateUser;
     private RoleDto role;
-    private List<DeviceDto> devices = new ArrayList<>();
 }
